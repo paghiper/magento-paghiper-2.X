@@ -1,0 +1,30 @@
+<div class="payment-method" data-bind="css: {'_active': (getCode() == isChecked())}">
+    <div class="payment-method-title field choice">
+        <input type="radio"
+               name="payment[method]"
+               class="radio"
+               data-bind="attr: {'id': getCode()}, value: getCode(), checked: isChecked, click: selectPaymentMethod, visible: isRadioButtonVisible()"/>
+        <label data-bind="attr: {'for': getCode()}" class="label"><span data-bind="text: getTitle()"></span></label>
+    </div>
+    <div class="payment-method-content">
+        <div class="field" style="width: 300px;">
+            <label class="label">CPF</label>
+            <input type="text" name="cpf" id="cpf-paghiper" class="input-text cpf-paghiper" maxlength="11" size="11" onkeypress="validCPF()" onkeydown="validCPF()"  onkeyup="validCPF()" data-validate="{required:true}" />
+        </div>
+        <div class="actions-toolbar">
+            <div class="primary">
+                <button class="action primary checkout btn-paghiper" style="display:none;"
+                        type="submit"
+                        data-bind="
+                        click: placeOrder,
+                        attr: {title: $t('Place Order')},
+                        css: {disabled: !isPlaceOrderActionAllowed()},
+                        enable: (getCode() == isChecked())
+                        "
+                        disabled>
+                    <span data-bind="i18n: 'Place Order'"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
