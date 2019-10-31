@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<page  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-  <body>
-    <referenceBlock class="Magento\Sales\Block\Order\Info" as="info" name="sales.order.info" after="sales.order.view" template="PagHiper_Paghiperpayment::order/info.phtml" ttl="false"/>
-  </body>
-</page>
