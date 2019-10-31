@@ -1,0 +1,14 @@
+<span><?php echo __($this->getTitle()) ?></span>
+<?php
+if($this->getInfo()->getOrder() && $this->getInfo()->getOrder()->getState() != 'closed' && $this->getInfo()->getOrder()->getState() != 'canceled'){
+    if($this->getInfo()->hasAdditionalInformation('vencimento')){
+        echo '<p class="vencimento">Vencimento: '. date('d/m/Y', strtotime($this->getInfo()->getAdditionalInformation('vencimento'))) .'</p>';
+    }
+    if($this->getInfo()->hasAdditionalInformation('linha_digitavel')){
+        echo '<p class="linha_digitavel">Linha digitável: <input type="text" readonly value="'. $this->getInfo()->getAdditionalInformation('linha_digitavel') .'" /></p><br>';
+    }
+    if($this->getInfo()->hasAdditionalInformation('boleto_url')){
+        echo '<a class="action tocart primary" href="'. $this->getInfo()->getAdditionalInformation('boleto_url') .'" target="_blank">Imprimir boleto</a>';
+    }
+}
+?>

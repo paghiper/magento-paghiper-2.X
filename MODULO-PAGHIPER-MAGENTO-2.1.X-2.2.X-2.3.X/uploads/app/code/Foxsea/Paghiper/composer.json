@@ -1,0 +1,24 @@
+{
+    "name": "foxsea/paghiper-magento2",
+    "license": "MIT",
+    "version": "1.0.0",
+    "type": "magento2-module",
+    "description": "Integração do PagHiper com o Magento2.",
+    "require": {
+        "php": ">=5.6.0"
+    },
+    "authors":[
+        {
+            "name":"FoxSea Ecommerce",
+            "email":"contato@foxsea.com.br"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ]
+    },
+    "config":{
+        "secure-http": false
+    }
+}

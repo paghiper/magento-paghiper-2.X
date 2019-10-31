@@ -1,0 +1,11 @@
+<?php $code = 'foxsea_paghiper'; ?>
+<fieldset class="admin__fieldset payment-method form-list" id="payment_form_<?= /* @noEscape */ $code ?>" style="display:none;">
+    <div class="admin__field _required">
+        <label class="admin__field-label" for="<?= /* @noEscape */ $code ?>_taxvat">
+            <span>CPF/CNPJ</span>
+        </label>
+        <div class="admin__field-control">
+            <input type="text" name="payment[foxsea_paghiper_taxvat]" class="admin__control-text input-text admin__control-text required-entry _required" />
+        </div>
+    </div>
+</fieldset>

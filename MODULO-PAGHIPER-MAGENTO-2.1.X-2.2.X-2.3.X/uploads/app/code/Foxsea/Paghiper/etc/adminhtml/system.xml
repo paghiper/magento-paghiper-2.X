@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="foxsea_paghiper" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Paghiper</label>
+
+                <field id="heading" type="note" translate="label" sortOrder="0" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <frontend_model>Foxsea\Paghiper\Block\Adminhtml\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Habilitado</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Título</label>
+                </field>
+                <field id="order_status" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Status do pedido</label>
+                    <source_model>Foxsea\Paghiper\Model\Config\Source\Order\Status\Pendingpayment</source_model>
+                </field>
+                <field id="information" translate="label" type="textarea" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Descrição</label>
+                </field>
+                <field id="apikey" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>ApiKey</label>
+                    <comment><![CDATA[<a href="https://www.paghiper.com/painel/credenciais/" target="_blank">Gerar aqui</a>]]></comment>
+                </field>
+                <field id="token" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Token</label>
+                    <comment><![CDATA[<a href="https://www.paghiper.com/painel/credenciais/" target="_blank">Gerar aqui</a>]]></comment>
+                </field>
+                <field id="days_due_date" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Dias para vencimento</label>
+                </field>
+                <field id="open_after_day_due" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Máximo de dias que poderá ser pago após o vencimento</label>
+                    <comment>De 0 à 30</comment>
+                    <validate>validate-digits-range digits-range-0-30</validate>
+                </field>
+                <field id="late_payment_fine" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Percentual de multa</label>
+                    <comment>De 0 à 2</comment>
+                    <validate>validate-digits-range digits-range-0-2</validate>
+                </field>
+                <field id="per_day_interest" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Aplicar juros por atraso?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="early_payment_discount" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Aplicar desconto para pagamento antecipado?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="early_payment_discounts_cents" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Desconto pagamento antecipado (%)</label>
+                    <comment><![CDATA[Quer saber como funciona? <a href="https://atendimento.paghiper.com/hc/pt-br/articles/360015940353" target="_blank">Clique aqui</a>]]></comment>
+                    <depends>
+                        <field id="early_payment_discount">1</field>
+                    </depends>
+                </field>
+                <field id="early_payment_discounts_days" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Dias que o pagamento pode ser antecipado</label>
+                    <comment><![CDATA[<font style="color: #FA4545;">Deve ser menor que o "Dias para vencimento".</font>]]></comment>
+                    <depends>
+                        <field id="early_payment_discount">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<module name="foxsea_paghiper" setup_version="2.0.0" />
+    <default>
+        <payment>
+            <foxsea_paghiper>
+                <active>1</active>
+                <model>Foxsea\Paghiper\Model\Payment\Paghiper</model>
+                <order_status>pending_payment</order_status>
+                <title>Paghiper</title>
+                <can_use_checkout>1</can_use_checkout>
+                <payment_action>order</payment_action>
+            </foxsea_paghiper>
+        </payment>
+    </default>
+</config>

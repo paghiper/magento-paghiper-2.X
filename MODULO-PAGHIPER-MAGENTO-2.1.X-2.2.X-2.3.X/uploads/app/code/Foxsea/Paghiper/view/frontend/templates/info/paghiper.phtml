@@ -1,0 +1,22 @@
+<?php
+if($block->getInfo()){
+?>
+    <div class="paghiper_info">
+        <b><?php echo $block->getInfo()->getMethodInstance()->getTitle();?></b>
+        <?php
+        if($block->getInfo()->getOrder()->getStatus() == 'pending_payment'){
+            if($block->getInfo()->hasAdditionalInformation('vencimento')){
+                echo '<p class="vencimento">Vencimento: '. date('d/m/Y', strtotime($block->getInfo()->getAdditionalInformation('vencimento'))) .'</p>';
+            }
+            if($block->getInfo()->hasAdditionalInformation('linha_digitavel')){
+                echo '<p class="linha_digitavel">Linha digitável: <input type="text" readonly value="'. $block->getInfo()->getAdditionalInformation('linha_digitavel') .'" /></p><br>';
+            }
+            if($block->getInfo()->hasAdditionalInformation('boleto_url')){
+                echo '<a class="action tocart primary" href="'. $block->getInfo()->getAdditionalInformation('boleto_url') .'" target="_blank">Imprimir boleto</a>';
+            }
+        }
+        ?>
+    </div>
+<?php
+}
+?>
