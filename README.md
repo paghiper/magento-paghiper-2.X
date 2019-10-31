@@ -9,7 +9,7 @@ Módulo Oficial do PagHiper para Boleto bancário no Magento Permite a emissão 
 
 # Download do Módulo
 
-[Baixar módulo 2.1.X, 2.2.X e 2.3.X](https://paghiper.zendesk.com/hc/article_attachments/360050403653/MODULO-PAGHIPER-MAGENTO-2.1.X-2.2.X-2.3.X.zip)
+[Baixar Módulo de BOLETO para MAGENTO 2.1.X, 2.2.X e 2.3.X](https://paghiper.zendesk.com/hc/article_attachments/360050403653/MODULO-PAGHIPER-MAGENTO-2.1.X-2.2.X-2.3.X.zip)
 
 
 
